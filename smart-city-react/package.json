@@ -1,0 +1,11 @@
+{
+  "name": "smart-city-react-root",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "npm --prefix ./smart-city-react run dev",
+    "start": "npm --prefix ./smart-city-react run dev",
+    "build": "npm --prefix ./smart-city-react run build",
+    "lint": "npm --prefix ./smart-city-react run lint"
+  }
+}
