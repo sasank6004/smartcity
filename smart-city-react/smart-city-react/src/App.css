@@ -1,0 +1,217 @@
+/* --- Color Palette Definitions --- */
+
+/* Default/Dark Theme */
+:root, [data-theme="dark"] {
+    --primary-color: #008080; 
+    --primary-hover: #006666; 
+    
+    --bg-light: #1f2a36; 
+    --bg-surface: #2c3a4f; 
+    --bg-dark: #10172a; 
+    
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-highlight: #ffffff;
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] {
+    --primary-color: #004d99;
+    --primary-hover: #0066cc;
+    
+    --bg-light: #f4f6f8; 
+    --bg-surface: #ffffff; 
+    --bg-dark: #004d99; 
+    
+    --text-primary: #333333;
+    --text-secondary: #6c7a89;
+    --text-highlight: #ffffff;
+}
+
+/* Base Styles using CSS variables */
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    /* FIX: Apply variables directly to root elements */
+    background-color: var(--bg-light); 
+    color: var(--text-primary); 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* App Container */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+}
+
+/* Center Login */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.auth-card {
+    background: var(--bg-surface);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    width: 350px;
+    text-align: center;
+}
+
+.auth-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+/* --- Dashboard Layout --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-dark); 
+    color: var(--text-highlight);
+    padding: 1rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header nav {
+    flex-grow: 1; 
+    justify-content: flex-end; 
+    display: flex; 
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.nav-link {
+    color: var(--text-highlight);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+    margin-left: 1.5rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color); 
+    text-decoration: none;
+}
+
+.container.main-content {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* --- Cards and Layouts --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid-container-metrics { 
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--bg-surface);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: left;
+    border-left: 4px solid var(--primary-color);
+}
+
+.data-highlight {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+.service-card {
+    background: var(--bg-surface);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.map-placeholder,
+.map-placeholder-large,
+.chart-placeholder {
+    background: var(--bg-light); 
+    color: var(--text-secondary);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    border: 2px dashed var(--text-secondary);
+}
+.map-placeholder-large, .chart-placeholder { height: 300px; margin-top: 1.5rem; }
+
+
+/* Buttons and Forms */
+.btn {
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: var(--text-highlight);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.primary-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+}
+.primary-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Inputs */
+input[type="text"], input[type="password"], select, textarea {
+    border: 1px solid var(--text-secondary);
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+}
+.input-group label {
+    color: var(--text-secondary);
+}
+
+.profile-card {
+    background: var(--bg-surface);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: auto;
+    text-align: left;
+}
